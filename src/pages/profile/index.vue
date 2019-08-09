@@ -1,8 +1,10 @@
 <template>
   <div class="wrap">
     <div class="head">
-      <div class="picture"></div>
-      <div class="uname"></div>
+      <div class="picture">
+        <img :src="useravatarUrl" alt="">
+      </div>
+      <div class="uname">{{username}}</div>
       <div class="QRcode"></div>
     </div>
     <div class="content">
@@ -42,7 +44,7 @@
             <i-icon class="iconfont icon-arrow" />
           </div>
         </div>
-        <!-- <div class="brother3">
+        <div class="brother3">
           <div class="son1">
             <span style="font-size:16px;">我的当前自提点</span>
             <div class="son1-i">
@@ -51,7 +53,7 @@
               </span>
               <i-icon class="iconfont icon-arrow" style="font-size:10px;" />
             </div>
-            
+
           </div>
           <div class="son2">
             <div class="son2-p">
@@ -62,7 +64,7 @@
           <div class="son3">
             <p>自提点电话:<span href="#">18670766176</span></p>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -85,8 +87,27 @@
 export default {
   data() {
     return {
-      name: "hshshh"
+      name: "hshshh",
+      useravatarUrl:"",
+      username:''
     };
+  },
+  beforeMount(){
+    var self=this
+    //获取头像
+      wx.getStorage({
+        key: 'useravatarUrl',
+          success (res) {
+            self.useravatarUrl=res.data
+          }
+      }),
+      wx.getStorage({
+        key: 'username',
+          success (res) {
+            self.username=res.data
+            console.log(self.username)
+          }
+      })
   },
   methods: {
     jumppage1() {
@@ -115,21 +136,20 @@ export default {
 }
 .wrap i-icon{
   font-size: 30px;
-  color: #686868; 
+  color: #686868;
 }
 .head {
   width: 100%;
   height: 130px;
-  background-color: #ff0000;
+  background-color:#FFB6C1;
   /* border: 1px solid black; */
 }
-.picture {
+.picture img{
   width: 60px;
   height: 60px;
   margin-left: 15px;
   margin-top: 15px;
   float: left;
-  border: 1px solid black;
   border-radius: 30px;
 }
 .uname {
@@ -137,15 +157,15 @@ export default {
   height: 60px;
   margin-left: 15px;
   margin-top: 15px;
+  color: #fff;
+  line-height: 60px;
   float: left;
-  border: 1px solid black;
 }
 .QRcode {
   width: 130px;
   height: 60px;
   float: right;
   margin-top: 15px;
-  border: 1px solid black;
 }
 .QRcode ::after {
   clear: both;
@@ -180,7 +200,7 @@ export default {
 .title {
   text-align: left;
   padding-left: 15px;
-  
+
 }
 .item {
   width: 65px;

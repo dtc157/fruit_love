@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div id="noshop" style="display:none">
+        <div id="noshop" style="display:none" >
             <img src="./noshop.jpg" alt="" >
             <p>您还没有添加任何商品偶</p>
             <input type="button"  class="gobuy" value="去逛逛" @click="gomain()">
@@ -76,9 +76,10 @@ import CartControl from '../../components/CartControl/CartControl'
 export default {
      methods:{
       gomain() {
-        wx.navigateTo({
+        wx.switchTab({
           url: '../index/main'
         })
+        
       }
      },
     components:{
@@ -202,8 +203,8 @@ export default {
             p         
                 color #999
             .gobuy
-                border red solid 1px
-                background-color red
+                border #fff solid 1px
+                background-color #FFB6C1
                 color #ffffff
                 height 50px
                 margin-top 10px       

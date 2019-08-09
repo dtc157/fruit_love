@@ -1,8 +1,11 @@
   {
   "pages": [
+    
+    
+    "pages/profile/main",
     "pages/firstpages/main",
     "pages/index/main",
-    "pages/profile/main",
+    "pages/order/main",
     "pages/shopcar/main",
     "pages/search/main",
     "pages/categories/main",

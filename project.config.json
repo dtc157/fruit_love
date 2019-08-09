@@ -23,6 +23,7 @@
 	"projectname": "fruit_love",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"libVersion": "2.8.0",
 	"condition": {
 		"search": {
 			"current": -1,

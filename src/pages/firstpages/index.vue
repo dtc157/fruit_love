@@ -2,15 +2,15 @@
     <div id='login' >
       <div id="login-son">
         <div class="backgroundimg"  >
-          <!-- <img src="./backgroundimg4.png" alt=""> -->
+          <!-- <img src="./backgroungimg5.jpg" alt=""> -->
         </div>
         <img class="img" :src="userInfo.avatarUrl" alt="">
-        <p>欢迎{{userInfo.nickName}}</p>
-        <p class="name">果恋--果挚爱,恋之在</p>
+        <p>欢迎<span>{{userInfo.nickName}}</span></p>
         <!-- <button open-type="getUserInfo" @getuserinfo="getUserInfo">授权登陆</button> -->
-        <button>开启小程序之旅</button>
+        <button @click="gomain">开启果恋之旅</button>
+        <p class="name">果恋--果挚爱,恋之在</p> 
       </div>
-      
+        
     </div>
 </template>
 
@@ -23,28 +23,27 @@ export default{
   }
   ,
   beforeMount(){
-      this.handleGetUserInfo()
+    wx.getUserInfo({
+          success:(data)=>{
+            this.userInfo=data.userInfo 
+              console.log(data)
+          }
+        })
   },
   methods:{
     //获取用户登陆信息
-    handleGetUserInfo(){
-        wx.getUserInfo({
-          success:(data)=>{
-            this.userInfo= data.userInfo 
-              console.log(data)
-          },
-          fail:()=>{
-            console.log("失败")
-          }
+    gomain(){
+        wx.switchTab({
+          url: '../index/main'
+        })
+        wx.setStorage({
+          key:"username",
+          data:this.userInfo.nickName
+        },{
+          key:"useravatarUrl",
+          data:this.userInfo.avatarUrl
         })
       },
-    getUserInfo(data){
-      //判断用户是否授权 
-      if(data.mp.detail.rawData){
-        //用户授权
-        this.handleGetUserInfo()
-      } 
-    }
   } 
 }
 </script>
@@ -69,15 +68,17 @@ export default{
       margin-top 50px
       z-index 100
     p
-      margin 20px;
+      margin-top 20px
+      margin-bottom 50px
       z-index 100
     .name
+      margin-top 200px
       color #c62970 
       z-index 100
     button
-      background-color pink
+      background-color #ed3e69
       color #fff
       font-size 20px
-      z-index 100
+      z-index 100 
 
 </style>
