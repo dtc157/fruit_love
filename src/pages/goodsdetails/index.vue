@@ -64,12 +64,12 @@ import GoodsInfo from "../../components/GoodsDetailsCom/GoodsInfo/GoodsInfo";
 import GoodsRatings from "../../components/GoodsDetailsCom/GoodsRatings/GoodsRatings";
 import FooterGoods from "../../components/GoodsDetailsCom/FooterGoodsDetails/FooterGoodsDetails";
   export default {
-    
+
     data() {
       return {
         images: [
           {
-              url:"../index/images/nav/7.jpg"
+              url:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372642015&di=0e65e75665019dbe6ac7247854d451ed&imgtype=0&src=http%3A%2F%2Fpic19.nipic.com%2F20120228%2F2917766_113138060000_2.jpg"
           },
           {
             url:
@@ -89,7 +89,7 @@ import FooterGoods from "../../components/GoodsDetailsCom/FooterGoodsDetails/Foo
             this.tab = index;
         }
     },
-    components: { 
+    components: {
       Swiper,
       FooterGoods,
       GoodsRatings,
@@ -218,14 +218,14 @@ import FooterGoods from "../../components/GoodsDetailsCom/FooterGoodsDetails/Foo
     #footer
       margin-bottom 70px;
       background-color #fff
-      .test 
+      .test
         width 100%
         .testNav
           display flex;
-          
+
           width 100%
           .item
-            height 40px; 
+            height 40px;
             color rgb(77, 85, 93)
             line-height 40px;
             text-align center

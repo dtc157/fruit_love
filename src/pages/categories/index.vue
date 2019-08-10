@@ -78,7 +78,7 @@
               <a>
                 <div class="goods_top">
                   <section class="goods_img">
-                    <img  src="../index/images/nav/7.jpg">
+                    <img  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372642015&di=0e65e75665019dbe6ac7247854d451ed&imgtype=0&src=http%3A%2F%2Fpic19.nipic.com%2F20120228%2F2917766_113138060000_2.jpg">
                   </section>
                   <section class="goods_title">
                       今日新鲜大西瓜
@@ -110,7 +110,7 @@
               <a>
                 <div class="goods_top">
                   <section class="goods_img">
-                    <img  src="../index/images/nav/7.jpg">
+                    <img  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372829295&di=f5a3cb8fd7cb68cfc09a05126a2f4204&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201809%2F05%2F20180905195832_bvhhf.jpg">
                   </section>
                   <section class="goods_title">
                     今日新鲜大西瓜
@@ -129,7 +129,7 @@
                     <div class="goods_sale">已售<span>8000</span>份/限量8000份</div>
                     <span class="goods_limit">每人限购10份</span>
                     <div class="cartcontral_wrap">
-                      <cartcontrol ></cartcontrol> 
+                      <cartcontrol ></cartcontrol>
                     </div>
                   </section>
                 </div>
@@ -142,7 +142,7 @@
               <a>
                 <div class="goods_top">
                   <section class="goods_img">
-                    <img  src="../index/images/nav/7.jpg">
+                    <img  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372829295&di=f5a3cb8fd7cb68cfc09a05126a2f4204&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201809%2F05%2F20180905195832_bvhhf.jpg">
                   </section>
                   <section class="goods_title">
                     今日新鲜大西瓜
@@ -255,7 +255,7 @@ export default {
               display: table-cell
               width: 56px
               vertical-align: middle
-              font-size: 12px   
+              font-size: 12px
         .content_right
           width 80%
           .goods_li
@@ -343,5 +343,5 @@ export default {
                   .cartcontral_wrap
                     position absolute
                     right 20px
-                    bottom 0px           
+                    bottom 0px
 </style>

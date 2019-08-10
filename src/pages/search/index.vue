@@ -9,8 +9,8 @@
       </div>
        <div class="content">
             <div class="shop_left_img">
-                
-                <img src="../index/images/nav/7.jpg" alt="">
+
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372829295&di=f5a3cb8fd7cb68cfc09a05126a2f4204&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201809%2F05%2F20180905195832_bvhhf.jpg" alt="">
             </div>
             <div class="shop_content_right">
                 <div class="content_title">
@@ -22,7 +22,7 @@
                     <div class="CartControl_warp">
                         <CartControl />
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -93,12 +93,12 @@ import ShopList from "../../components/ShopList/ShopList";
             display flex
             padding  10px
             align-items center
-            .iconfont 
+            .iconfont
                 font-size 20px;
                 margin-right 5px
                 &.on
                     color red
-            img 
+            img
                 height 100px
                 width 100px
                 border-radius 5px
@@ -111,7 +111,7 @@ import ShopList from "../../components/ShopList/ShopList";
         h
             display block
             width 170px
-            font-size 16px  
+            font-size 16px
             font-weight 500
             white-space nowrap
             overflow hidden
@@ -122,11 +122,11 @@ import ShopList from "../../components/ShopList/ShopList";
     .content_footer
         display flex
         position relative
-        height 40px  
+        height 40px
         .shop_price
             font-size 20px
             line-height 40px
-            color red   
+            color red
         .CartControl_warp
             position absolute
             right 15px

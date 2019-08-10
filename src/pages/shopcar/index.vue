@@ -8,7 +8,7 @@
                 <div class="content">
                     <div class="shop_left_img">
                         <i class="iconfont icon-duigouxiao on"> </i>
-                        <img src="../index/images/nav/7.jpg" alt="">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372642015&di=0e65e75665019dbe6ac7247854d451ed&imgtype=0&src=http%3A%2F%2Fpic19.nipic.com%2F20120228%2F2917766_113138060000_2.jpg" alt="">
                     </div>
                     <div class="shop_content_right">
                         <div class="content_title">
@@ -20,14 +20,14 @@
                             <div class="CartControl_warp">
                                 <CartControl />
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
                 <div class="content">
                     <div class="shop_left_img">
                         <i class="iconfont icon-duigouxiao on"> </i>
-                        <img src="../index/images/nav/7.jpg" alt="">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372642015&di=0e65e75665019dbe6ac7247854d451ed&imgtype=0&src=http%3A%2F%2Fpic19.nipic.com%2F20120228%2F2917766_113138060000_2.jpg" alt="">
                     </div>
                     <div class="shop_content_right">
                         <div class="content_title">
@@ -39,11 +39,11 @@
                             <div class="CartControl_warp">
                                 <CartControl />
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div id="footer">
                 <div class="check">
                     <i class="iconfont icon-duigouxiao on"> </i>
@@ -68,8 +68,8 @@
             <input type="button"  class="gobuy" value="去逛逛" @click="gomain()">
         </div>
     </div>
-        
-       
+
+
 </template>
 <script>
 import CartControl from '../../components/CartControl/CartControl'
@@ -79,7 +79,7 @@ export default {
         wx.switchTab({
           url: '../index/main'
         })
-        
+
       }
      },
     components:{
@@ -99,7 +99,7 @@ export default {
                 line-height 30px
                 background-color #fff
                 margin-bottom 10px
-                span 
+                span
                     float right
                     margin-right 15px
             #body
@@ -112,12 +112,12 @@ export default {
                         display flex
                         padding  10px
                         align-items center
-                        .iconfont 
+                        .iconfont
                             font-size 20px;
                             margin-right 5px
                             &.on
                                 color red
-                        img 
+                        img
                             height 100px
                             width 100px
                             border-radius 5px
@@ -130,7 +130,7 @@ export default {
                     h
                         display block
                         width 170px
-                        font-size 16px  
+                        font-size 16px
                         font-weight 500
                         white-space nowrap
                         overflow hidden
@@ -141,23 +141,23 @@ export default {
                 .content_footer
                     display flex
                     position relative
-                    height 40px  
+                    height 40px
                     .shop_price
                         font-size 20px
                         line-height 40px
-                        color red   
+                        color red
                     .CartControl_warp
                         position absolute
                         right 15px
-                        bottom 5px 
+                        bottom 5px
             #footer
                 width 100%
                 height 50px
                 box-sizing border-box
                 position absolute
-                line-height 45px    
+                line-height 45px
                 bottom 0
-                left 0            
+                left 0
                 .check
                     margin-left 10px
                     float left
@@ -181,7 +181,7 @@ export default {
                     .pay
                         width 100px
                         margin-left 10px
-                        background-color #999 
+                        background-color #999
                         color #fff
                         font-size 16px
                         text-align center
@@ -199,16 +199,16 @@ export default {
                         text-align center
         #noshop
             padding 10px
-            text-align center   
-            p         
+            text-align center
+            p
                 color #999
             .gobuy
                 border #fff solid 1px
                 background-color #FFB6C1
                 color #ffffff
                 height 50px
-                margin-top 10px       
+                margin-top 10px
 
-                    
+
 
 </style>
