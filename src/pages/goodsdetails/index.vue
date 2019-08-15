@@ -80,14 +80,19 @@ import FooterGoods from "../../components/GoodsDetailsCom/FooterGoodsDetails/Foo
               "https://img-oss.yunshanmeicai.com/goods/default/e83c8f0f-4acc-4729-bcbb-294f2b314977.jpg"
           }
         ],
-        tab: 1
+        tab: 1,
+        item:""
       };
     },
-      methods: {
-        //点击切换Tab
-        changTab(index) {
-            this.tab = index;
-        }
+    mounted(){
+      this.item = this.$root.$mp.query.item
+      console.log(this.item)
+    },
+    methods: {
+      //点击切换Tab
+      changTab(index) {
+          this.tab = index;
+      }
     },
     components: {
       Swiper,
@@ -222,7 +227,6 @@ import FooterGoods from "../../components/GoodsDetailsCom/FooterGoodsDetails/Foo
         width 100%
         .testNav
           display flex;
-
           width 100%
           .item
             height 40px;

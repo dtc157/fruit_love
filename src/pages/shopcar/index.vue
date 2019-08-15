@@ -1,13 +1,13 @@
 <template>
     <div class="shopcar" >
-        <div id="haveshop" >
+        <div id="haveshop">
             <div id="header">
-                <span>编辑</span>
+                <span @click="changeisedit()">编辑</span>
             </div>
             <div id="body">
                 <div class="content">
                     <div class="shop_left_img">
-                        <i class="iconfont icon-duigouxiao on"> </i>
+                        <i class="iconfont icon-duigouxiao " :class="{on:ischeck}"> </i>
                         <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372642015&di=0e65e75665019dbe6ac7247854d451ed&imgtype=0&src=http%3A%2F%2Fpic19.nipic.com%2F20120228%2F2917766_113138060000_2.jpg" alt="">
                     </div>
                     <div class="shop_content_right">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="content">
                     <div class="shop_left_img">
-                        <i class="iconfont icon-duigouxiao on"> </i>
+                        <i class="iconfont icon-duigouxiao " :class="{on:ischeck}"> </i>
                         <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372642015&di=0e65e75665019dbe6ac7247854d451ed&imgtype=0&src=http%3A%2F%2Fpic19.nipic.com%2F20120228%2F2917766_113138060000_2.jpg" alt="">
                     </div>
                     <div class="shop_content_right">
@@ -46,23 +46,23 @@
             </div>
             <div id="footer">
                 <div class="check">
-                    <i class="iconfont icon-duigouxiao on"> </i>
+                    <i class="iconfont icon-duigouxiao " :class="{on:ischeck}"> </i>
                     <span>全选</span>
                 </div>
                 <div class="footer_right">
                     <div class="totalprice">
-                        <p>合计<span>￥0</span></p>
+                        <p>合计 <span v-if="isedit">￥1</span> <span v-else>￥0</span></p>
                     </div>
-                    <div class="pay on" >
+                    <div class="pay on" v-if="isedit">
                         <p>去结算(0)</p>
                     </div>
-                    <div class="delete" style="display:none" >
+                    <div class="delete" v-else >
                         <p>删除</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="noshop" style="display:none" >
+        <div id="noshop" style="  display:none" >
             <img src="./noshop.jpg" alt="" >
             <p>您还没有添加任何商品偶</p>
             <input type="button"  class="gobuy" value="去逛逛" @click="gomain()">
@@ -74,13 +74,24 @@
 <script>
 import CartControl from '../../components/CartControl/CartControl'
 export default {
+  data(){
+    return{
+        isedit:true,
+        ischeck:true
+    }
+  },
      methods:{
+      //跳转
       gomain() {
         wx.switchTab({
           url: '../index/main'
         })
-
-      }
+      },
+       //编辑
+       changeisedit(){
+         this.isedit=!this.isedit
+         this.ischeck=!this.ischeck
+       }
      },
     components:{
         CartControl
@@ -115,6 +126,7 @@ export default {
                         .iconfont
                             font-size 20px;
                             margin-right 5px
+                            color #999
                             &.on
                                 color red
                         img
@@ -166,6 +178,7 @@ export default {
                     .iconfont
                         font-size 20px
                         margin-right 5px
+                        color #999
                         &.on
                             color red
                     span

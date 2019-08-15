@@ -14,29 +14,29 @@
             <h3 class="title">我的订单</h3>
           </div>
           <ul class="items">
-            <li class="item" @click="jumppage1()">
+            <li class="item" @click="jumppage(1)">
               <i-icon class="iconfont icon-dingwei-" type="document" size="30" />
               <br />全部订单
             </li>
-            <li class="item" @click="jumppage2()">
+            <li class="item" @click="jumppage(2)">
               <i-icon class="iconfont icon-weifukuan-copy" type="document" size="30" />
               <br />未付款
             </li>
-            <li class="item" @click="jumppage3()">
+            <li class="item" @click="jumppage(3)">
               <i-icon class="iconfont icon-daitihuo1-copy" type="document" size="30" />
               <br />待取货
             </li>
-            <li class="item" @click="jumppage4()">
+            <li class="item" @click="jumppage(4)">
               <i-icon class="iconfont icon-tijiaodingdanyitihuo_-copy" type="document" size="30" />
               <br />已取货
             </li>
           </ul>
         </div>
-        <div class="brother2">
+        <div class="brother2" @click="jumppagerating()">
           <div class="ideaphoto">
             <i-icon class="iconfont icon-pingjia"  />
           </div>
-          <div class="paragraph">
+          <div class="paragraph" >
             <h3 id="idea1">生鲜馆商品评价</h3>
             <h6 id="idea2">您的评价，能更好地提升我们的服务</h6>
           </div>
@@ -51,7 +51,7 @@
               <span style="color:rgb(241, 168, 9);font-size:12px;">
                 切换自提点&nbsp;
               </span>
-              <i-icon class="iconfont icon-arrow" style="font-size:10px;" />
+              <i class="iconfont icon-arrow" ></i>
             </div>
 
           </div>
@@ -110,21 +110,19 @@ export default {
       })
   },
   methods: {
-    jumppage1() {
-      const url = "../order/main";
-      wx.navigateTo({ url });
+    jumppage(value) {
+      wx.navigateTo({
+        url: "../order/main?index="+value
+
+      })
+      console.log(value)
     },
-    jumppage2() {
-      const url = "../goods/main";
-      wx.navigateTo({ url });
-    },
-    jumppage3() {
-      const url = "../payment/main";
-      wx.navigateTo({ url });
-    },
-    jumppage4() {
-      const url = "../transport/main";
-      wx.navigateTo({ url });
+    jumppagerating(value) {
+      wx.navigateTo({
+        url: "../goodsRating/main?index="+value
+
+      })
+      console.log(value)
     }
   }
 };
@@ -141,16 +139,16 @@ export default {
 .head {
   width: 100%;
   height: 130px;
-  background-color:#FFB6C1;
+  background-color:#FF0000;
   /* border: 1px solid black; */
 }
 .picture img{
-  width: 60px;
-  height: 60px;
-  margin-left: 15px;
-  margin-top: 15px;
+  width: 70px;
+  height: 70px;
+  margin-left: 20px;
+  margin-bottom: 5px;
   float: left;
-  border-radius: 30px;
+  border-radius: 50%;
 }
 .uname {
   width: 130px;
@@ -279,6 +277,8 @@ export default {
   /* border: 1px solid black; */
 }
 .son1 {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 42px;
   line-height: 42px;
@@ -287,14 +287,17 @@ export default {
   /* border: 1px solid black; */
 }
 .son1-i{
-  float: right;
+    display: flex;
   margin-right: 20px;
+}
+.son1-i i{
+  font-size: 12px;
 }
 .son2 {
   width: 100%;
-  height: 90px;
+  height: 80px;
+  padding-top:10px;
   font-size: 13px;
-  margin-top:20px;
   box-shadow:0 1px 0 0 rgba(0, 0, 0, 0.13);
 }
 .son2p1 {

@@ -12,13 +12,13 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <a href="/pages/categories/main" class="link_to_food" v-for="(category,index) in categories" :key="index">
+              <li  class="link_to_food"  @click="gocategories(index)"
+                  v-for="(category,index) in categories" :key="index">
                 <div class="food_container">
                   <img class="img" :src="category.category_image">
                 </div>
                 <span>{{category.category_name}}</span>
-              </a>
-                
+              </li>
             </div>
           </div>
           <!-- Add Pagination -->
@@ -26,19 +26,19 @@
         </div>
       </nav>
       <!--首页附近商家-->
-      <div class="msite_shop_list" @click="A()" >
+      <div class="msite_shop_list" @click="A(item,index)" >
         <div class="shop_header">
           <i class="iconfont icon-huobaodanpin"></i>
           <span class="shop_header_title">活动</span>
         </div>
       </div>
-      <ShopList v-for="(item,index) in list" :key="index" :item="item" :index="index"></ShopList>
+      <ShopList v-for="(item,index) in list" :key="index" :item="item" :index="index" ></ShopList>
     </div>
 </template>
 
 <script>
   import ShopList from "../../components/ShopList/ShopList";
- 
+
   import {mapState,mapMutations} from 'vuex'
    import {TEST} from '../../store/mutation-types'
   export default {
@@ -61,15 +61,17 @@
           url: '../search/main'
         })
       },
-      A(){
-        console.log(this.list)
+      gocategories(index){
+        wx.navigateTo({
+          url: "../categories/main?index="+index
+        })
+        console.log(index)
       },
       async A1 (params) {
         let self=this
         wx.request({
           url: 'http://localhost:3000/GoodsDetails', //仅为示例，并非真实的接口地址
           data: {
-            
           },
           header: {
             'content-type': 'application/json' // 默认值

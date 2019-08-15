@@ -1,6 +1,6 @@
 <template>
   <div class="goods_container">
-    
+
     <ul class="goods_list" >
       <li class="goods_li border-1px" @click="goDetails()">
         <span>
@@ -57,7 +57,7 @@
       },
       goDetails() {
         wx.navigateTo({
-          url: '../goodsdetails/main'
+          url: '../goodsdetails/main?item='+this.item
         })
       }
     }
@@ -162,7 +162,7 @@
               .goods_limit
                 display block
                 margin-top 5px
-                margin-right 20px 
+                margin-right 20px
                 float right
                 color #ffb369
                 font-size 12px;

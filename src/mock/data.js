@@ -29,10 +29,6 @@ module.exports = () => {
       'activity|1':["A","B","c","D"],
       'activity_color':'@color',
       'goods_image':Random.image('200x100', '#FF6600')
-
-
-
-
     }]
   });
   // 返回的data会作为json-server的数据

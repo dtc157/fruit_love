@@ -19,7 +19,7 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
+	"appid": "wx05985c598abc7827",
 	"projectname": "fruit_love",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},

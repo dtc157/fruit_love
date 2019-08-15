@@ -7,73 +7,21 @@
         </div>
         <div class="content">
           <div class="menu-wrapper" ref="menuWrapper">
-            <ul>
-              <li class="menu-item current" >
+            <div class="menu">
+              <ul>
+                  <li class="menu-item "  :class="{current: index===clickindex}" v-for="(category,index ) in categories" :key="index"
+                    @click="clickMenuItem(index)">
                 <span class="text bottom-border-1px">
                 <img class="icon"
                      src="https://fuss10.elemecdn.com/0/6a/05b267f338acfeb8bd682d16e836dpng.png">
-                折扣
+                {{category.category_name}}
                 </span>
-              </li>
-              <li class="menu-item">
-                <span class="text bottom-border-1px">
-                <img class="icon"
-                     src="https://fuss10.elemecdn.com/b/91/8cf4f67e0e8223931cd595dc932fepng.png">
-                优惠
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="text bottom-border-1px">
-                <img class="icon"
-                     src="https://fuss10.elemecdn.com/b/91/8cf4f67e0e8223931cd595dc932fepng.png">
-                优惠
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="text bottom-border-1px">
-                <img class="icon"
-                     src="https://fuss10.elemecdn.com/b/91/8cf4f67e0e8223931cd595dc932fepng.png">
-                优惠
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="text bottom-border-1px">
-                <img class="icon"
-                     src="https://fuss10.elemecdn.com/b/91/8cf4f67e0e8223931cd595dc932fepng.png">
-                优惠
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="text bottom-border-1px">
-                <img class="icon"
-                     src="https://fuss10.elemecdn.com/b/91/8cf4f67e0e8223931cd595dc932fepng.png">
-                优惠
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="text bottom-border-1px">
-                <img class="icon"
-                     src="https://fuss10.elemecdn.com/b/91/8cf4f67e0e8223931cd595dc932fepng.png">
-                优惠
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="text bottom-border-1px">
-                <img class="icon"
-                     src="https://fuss10.elemecdn.com/b/91/8cf4f67e0e8223931cd595dc932fepng.png">
-                优惠
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="text bottom-border-1px">
-                <img class="icon"
-                     src="https://fuss10.elemecdn.com/b/91/8cf4f67e0e8223931cd595dc932fepng.png">
-                优惠
-                </span>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="content_right">
+            <!--<h1>{{categoryname}}</h1>-->
             <li class="goods_li border-1px" >
               <a>
                 <div class="goods_top">
@@ -103,62 +51,29 @@
                 </div>
               </a>
               <div class="width">
-
               </div>
             </li>
-            <li class="goods_li border-1px" >
+            <li class="goods_li border-1px" v-for="(food,index) in foods" :key="index">
               <a>
                 <div class="goods_top">
                   <section class="goods_img">
-                    <img  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372829295&di=f5a3cb8fd7cb68cfc09a05126a2f4204&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201809%2F05%2F20180905195832_bvhhf.jpg">
+                    <img  :src="food.goods_image">
                   </section>
                   <section class="goods_title">
-                    今日新鲜大西瓜
+                    {{food.goods_name}}
                   </section>
                 </div>
                 <div class="goods_footer">
                   <section class="goods_footer_left">
-                    <span class="goods_time">预售时间：07月21日</span>
-                    <span class="goods_time1">提货时间：08月01日</span>
+                    <span class="goods_time">预售时间：{{food.start_time}}</span>
+                    <span class="goods_time1">提货时间：{{food.over_time}}</span>
                     <div class="goods_price">
-                      <span class="goods_newPrice">￥1.19</span>
-                      <span class="goods_oldPrice">￥2</span>
+                      <span class="goods_newPrice">￥{{food.new_price}}</span>
+                      <span class="goods_oldPrice">￥{{food.old_price}}</span>
                     </div>
                   </section >
                   <section class="goods_footer_right">
-                    <div class="goods_sale">已售<span>8000</span>份/限量8000份</div>
-                    <span class="goods_limit">每人限购10份</span>
-                    <div class="cartcontral_wrap">
-                      <cartcontrol ></cartcontrol>
-                    </div>
-                  </section>
-                </div>
-              </a>
-              <div class="width">
-
-              </div>
-            </li>
-            <li class="goods_li border-1px" >
-              <a>
-                <div class="goods_top">
-                  <section class="goods_img">
-                    <img  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565372829295&di=f5a3cb8fd7cb68cfc09a05126a2f4204&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201809%2F05%2F20180905195832_bvhhf.jpg">
-                  </section>
-                  <section class="goods_title">
-                    今日新鲜大西瓜
-                  </section>
-                </div>
-                <div class="goods_footer">
-                  <section class="goods_footer_left">
-                    <span class="goods_time">预售时间：07月21日</span>
-                    <span class="goods_time1">提货时间：08月01日</span>
-                    <div class="goods_price">
-                      <span class="goods_newPrice">￥1.19</span>
-                      <span class="goods_oldPrice">￥2</span>
-                    </div>
-                  </section >
-                  <section class="goods_footer_right">
-                    <div class="goods_sale">已售<span>8000</span>份/限量8000份</div>
+                    <div class="goods_sale">已售<span>{{food.sold}}</span>份/限量{{food.all_number}}份</div>
                     <span class="goods_limit">每人限购10份</span>
                     <div class="cartcontral_wrap">
                       <cartcontrol ></cartcontrol>
@@ -172,7 +87,6 @@
             </li>
           </div>
         </div>
-
       </div>
     </div>
 </template>
@@ -180,12 +94,57 @@
 <script>
 import cartcontrol from "../../components/CartControl/CartControl"
 export default {
+  data(){
+    return{
+      categories:"",
+      clickindex:0,
+      foods:[],
+      categoryname:"",
+    }
+  },
+  beforeMount(){
+    this.getCategory()
+  },
+  mounted(){
+    this.clickindex=this.$root.$mp.query.index
+  },
+    watch:{
+      // clickindex(){
+      //   this.clickindex=this.queryindex
+      // }
+    },
    methods:{
+    //跳转商品详情
       goDetail() {
         wx.navigateTo({
           url: '../search/main'
         })
-      }
+      },
+     //得到类名
+     async getCategory (params) {
+       let self=this
+       wx.request({
+         url: 'http://localhost:3000/category', //仅为示例，并非真实的接口地址
+         data: {
+         },
+         header: {
+           'content-type': 'application/json' // 默认值
+         },
+         success (res) {
+           self.categories=res.data
+            self.foods=self.categories[self.clickindex].foods
+           self.categoryname=self.categories[self.clickindex].category_name
+         }
+       })
+     },
+     //得到对应类别商品
+     clickMenuItem(index){
+       this.clickindex=index
+       this.foods=this.categories[index].foods
+       this.categoryname=this.categories[index].category_name
+       console.log(this.foods)
+     },
+     //初始化foods
     },
   components:{
         cartcontrol
@@ -221,24 +180,26 @@ export default {
           background-color #f2f2f2
       .content
         margin-top 10px
-        display flex
         box-sizing border-box
         top-border-1px(#f1f1f1)
         .menu-wrapper
           flex: 0 0 80px
           width: 80px
-          background: #f3f5f7
+          background: #fff
+          position:fixed;
           .menu-item
             display: table
             height: 54px
             width: 56px
             padding: 0 12px
             line-height: 14px
+            border-bottom #fff solid 3px
+            box-shadow 0px 1px 0px 0px rgba(0, 0, 0, 0.13);
             &.current
               position: relative
               z-index: 10
               margin-top: -1px
-              background: #fff
+              border-bottom red solid 1px;
               color: #ff0000
               font-weight: 700
               .text
@@ -258,6 +219,11 @@ export default {
               font-size: 12px
         .content_right
           width 80%
+          float right
+          h1
+            font-size 16px
+            background-color #f3f5f7
+            padding 15px
           .goods_li
             padding 10px;
             margin-bottom 10px

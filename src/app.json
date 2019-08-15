@@ -1,14 +1,14 @@
   {
   "pages": [
-    
-    
-    "pages/profile/main",
     "pages/firstpages/main",
-    "pages/index/main",
+    "pages/goodsRating/main",
+    "pages/map/main",
     "pages/order/main",
+    "pages/index/main",
     "pages/shopcar/main",
-    "pages/search/main",
     "pages/categories/main",
+    "pages/profile/main",
+    "pages/search/main",
     "pages/goodsdetails/main"
   ],
   "window": {
